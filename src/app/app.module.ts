@@ -25,6 +25,9 @@ import { effects, reducers } from './presentation'
 import { EffectsModule } from '@ngrx/effects'
 import { StoreModule } from '@ngrx/store'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store'
+import { RouterSerializer } from './presentation/router/router.selectors'
+import { MatTableModule } from '@angular/material/table'
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     MatFormFieldModule,
     MatProgressBarModule,
     MatSnackBarModule,
+    MatTableModule,
 
     // Firebase Modules
     AngularFireModule.initializeApp(environment.firebase),
@@ -59,9 +63,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     // NgRx Modules
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),
+    StoreRouterConnectingModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
-  providers: [],
+  providers: [
+    { provide: RouterStateSerializer, useClass: RouterSerializer },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
