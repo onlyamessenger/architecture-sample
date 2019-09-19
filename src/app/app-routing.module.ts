@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core'
-import { Routes, RouterModule } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router'
 import { DashboardComponent } from './framework/components/dashboard/dashboard.component'
-
 
 const routes: Routes = [
   {
@@ -11,7 +10,21 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    children: [
+      /*{
+        path: 'users',
+        component: UserViewComponent
+      },
+      {
+        path: 'users/new',
+        component: UserCreateComponent
+      },
+      {
+        path: 'users/:id',
+        component: UserEditComponent
+      },*/
+    ]
   }
 ]
 
