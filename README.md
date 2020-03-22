@@ -1,27 +1,37 @@
-# ArchitectureStarter
+# Architecture Sample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+Template Application to be used with [@ascendedco/schematics](https://www.npmjs.com/package/@ascendedco/schematics) and [@ascendedco/architecture](https://www.npmjs.com/package/@ascendedco/architecture) utility libraries.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Objective
 
-## Code scaffolding
+The goal of the Architecture project and its respective libraries, is to provide developers with the basis for a scalable and reliable building experience.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Primarily, by using this repository as a basis for Angular app development, you will reduce your learning curve and increase build quality.
 
-## Build
+Using the schematics will allow you to generate entire features that are well structured, make use of architecture best practices, and use modern front end techniques like uni-directional data flow (using NgRx).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Uses of this project does not restrict developers from going beyond, or changing templates, but allows them to be more creative and balanced in their designs.
 
-## Running unit tests
+### Project Outline
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Projects that make use of the Architecture project and its respective libraries, will have a folder structure that looks as follows:
 
-## Running end-to-end tests
+- database (contains database gateway implementations)
+- domain (contains network / database gateway abstractions)
+- entity (contains entity representations)
+- framework (contains platform-specific code)
+- network (contains network gateway implementations)
+- presentation (contains state / presentation logic, typically using the redux pattern)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Usage
 
-## Further help
+## CLI Commands
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The following table contains the CLI commands that can be used to generate application architecture and user interfaces.
+
+| Description | Command |
+|---|---|
+| Generate a **feature** (entity, domain, network, presentation) | ng g @ascendedco/schematics:feature |
+| Generate a **component** (create, read, update, delete) | ng g @ascendedco/schematics:component |
