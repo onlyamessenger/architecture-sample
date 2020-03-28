@@ -12,7 +12,7 @@ Primarily, by using this repository as a basis for Angular app development, you 
 
 Using the schematics will allow you to generate entire features that are well structured, make use of architecture best practices, and use modern front end techniques like uni-directional data flow (using NgRx).
 
-Uses of this project does not restrict developers from going beyond, or changing templates, but allows them to be more creative and balanced in their designs.
+Use of this project does not restrict developers from going beyond, or changing templates, but allows them to be more creative and balanced in their designs.
 
 ### Project Outline
 
