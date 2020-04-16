@@ -24,7 +24,7 @@ import { effects, reducers } from './presentation'
 import { EffectsModule } from '@ngrx/effects'
 import { StoreModule } from '@ngrx/store'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store'
+import { StoreRouterConnectingModule } from '@ngrx/router-store'
 import { RouterSerializer } from './presentation/router/router.selectors'
 import { MatTableModule } from '@angular/material/table'
 import { DashboardComponentDesktop } from './framework/components/dashboard/dashboard.component.desktop'
@@ -65,11 +65,11 @@ import { DashboardComponentMobile } from './framework/components/dashboard/dashb
     // NgRx Modules
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot({ serializer: RouterSerializer }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [
-    { provide: RouterStateSerializer, useClass: RouterSerializer },
+
   ],
   bootstrap: [AppComponent],
 })
