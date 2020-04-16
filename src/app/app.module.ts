@@ -36,9 +36,6 @@ import { DashboardComponentMobile } from './framework/components/dashboard/dashb
     DashboardComponentDesktop,
     DashboardComponentMobile
   ],
-  entryComponents: [
-    DashboardComponentMobile
-  ],
   imports: [
     BrowserModule,
     AppRouterModule,
