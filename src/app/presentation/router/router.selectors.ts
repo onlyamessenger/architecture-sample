@@ -2,6 +2,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router'
 import { RouterReducerState, RouterStateSerializer } from '@ngrx/router-store'
 import { createFeatureSelector, createSelector } from '@ngrx/store'
 import { State } from './router.reducer'
+import { Injectable } from "@angular/core";
 
 export const getRouterState = createFeatureSelector
   <RouterReducerState<State>>('router')
@@ -24,6 +25,7 @@ export const getUrl = createSelector(
   (state: RouterReducerState<State>) => state === undefined ? '' : state.state.url
 )
 
+@Injectable()
 export class RouterSerializer implements RouterStateSerializer<State> {
 
   serialize(routerState: RouterStateSnapshot): State {
