@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router'
-import { DashboardComponent } from './framework/components/dashboard/dashboard.component'
+import { DashboardComponentDesktop } from './framework/components/dashboard/dashboard.component.desktop'
+import { DashboardComponentMobile } from './framework/components/dashboard/dashboard.component.mobile'
 
-export const routes: Routes = [
+export const routesDesktop: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
@@ -9,20 +10,24 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    component: DashboardComponentDesktop,
     children: [
-      /*{
-        path: 'users',
-        component: UserViewComponent
-      },
-      {
-        path: 'users/new',
-        component: UserCreateComponent
-      },
-      {
-        path: 'users/:id',
-        component: UserEditComponent
-      },*/
+
+    ]
+  }
+]
+
+export const routesMobile: Routes = [
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponentMobile,
+    children: [
+
     ]
   }
 ]

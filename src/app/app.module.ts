@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core'
 import { AppRouterModule } from './app.router.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { DashboardComponent } from './framework/components/dashboard/dashboard.component'
 import { LayoutModule } from '@angular/cdk/layout'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button'
@@ -28,11 +27,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store'
 import { RouterSerializer } from './presentation/router/router.selectors'
 import { MatTableModule } from '@angular/material/table'
+import { DashboardComponentDesktop } from './framework/components/dashboard/dashboard.component.desktop'
+import { DashboardComponentMobile } from './framework/components/dashboard/dashboard.component.mobile'
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    DashboardComponentDesktop,
+    DashboardComponentMobile
+  ],
+  entryComponents: [
+    DashboardComponentMobile
   ],
   imports: [
     BrowserModule,
