@@ -33,5 +33,5 @@ The following table contains the CLI commands that can be used to generate appli
 
 | Description | Command |
 |---|---|
-| Generate a **feature** (entity, domain, network, presentation) | ng g @ascendedco/schematics:feature |
-| Generate a **component** (create, read, update, delete) | ng g @ascendedco/schematics:component |
+| Generate a **feature** (entity, domain, network, presentation) | ng g @ascendedco/architecture:feature |
+| Generate a **component** (create, read, update, delete) | ng g @ascendedco/architecture:component |
